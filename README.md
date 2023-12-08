@@ -31,18 +31,26 @@ After adding `images` folder to root directory, run:
 python scripts/train_validate_split.py
 ```
 After this is ran, 2 new folders will be created in data/custom/ which are `train2017` and `val2017`.
+
+### Fine-tuning model
+Run `detr_main.ipynb` to fine-tune DETR on the streeview dataset.
+
 # Project Structure
 
 ```
 ├── data/custom/        <- Local data files only (do not commit)
+│   ├── annotations
+│   ├── train2017
+│   ├── val2017
 │
 ├── detr/               <- Cloned detr repo (do not commit)
 │
 ├── detr_main.ipynb     <- Python notebook to train model
 │
 ├── scripts             <- Python scripts to run in command line 
+│   ├── train_validate_split.py
 │
-├── outputs             <- Location of model after fine-tuning and log (do not commit local fine-tuned model)
+├── outputs             <- Location of model after fine-tuning and log (do not commit local model)
 │
 ├── .gitignore          <- Git ignore file
 │
@@ -50,3 +58,10 @@ After this is ran, 2 new folders will be created in data/custom/ which are `trai
 │
 └── README.md           <- The top-level README for repo
 ```
+
+path/to/coco/
+├ annotations/  # JSON annotations
+│  ├ annotations/custom_train.json
+│  └ annotations/custom_val.json
+├ train2017/    # training images
+└ val2017/      # validation images
