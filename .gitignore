@@ -1,0 +1,6 @@
+.detr/
+*.ipynb_checkpoints
+*.DS_STORE
+.data/custom/train2017/**
+.data/custom/val2017/**
+.outputs/checkpoint.pth
