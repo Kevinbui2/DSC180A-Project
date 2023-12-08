@@ -38,30 +38,25 @@ Run `detr_main.ipynb` to fine-tune DETR on the streeview dataset.
 # Project Structure
 
 ```
-├── data/custom/        <- Local data files only (do not commit)
+├── data/custom/                <- Local data files only (do not commit)
 │   ├── annotations
+│       ├── custom_train.json
+│       ├── custom_val.json
 │   ├── train2017
 │   ├── val2017
 │
-├── detr/               <- Cloned detr repo (do not commit)
+├── detr/                       <- Cloned detr repo (do not commit)
 │
-├── detr_main.ipynb     <- Python notebook to train model
+├── detr_main.ipynb             <- Python notebook to train model
 │
-├── scripts             <- Python scripts to run in command line 
+├── scripts                     <- Python scripts to run in command line 
 │   ├── train_validate_split.py
 │
-├── outputs             <- Location of model after fine-tuning and log (do not commit local model)
+├── outputs                     <- Location of model after fine-tuning and log (do not commit local model)
 │
-├── .gitignore          <- Git ignore file
+├── .gitignore                  <- Git ignore file
 │
-├── environment.yml     <- Conda environment file
+├── environment.yml             <- Conda environment file
 │
-└── README.md           <- The top-level README for repo
+└── README.md                   <- The top-level README for repo
 ```
-
-path/to/coco/
-├ annotations/  # JSON annotations
-│  ├ annotations/custom_train.json
-│  └ annotations/custom_val.json
-├ train2017/    # training images
-└ val2017/      # validation images
