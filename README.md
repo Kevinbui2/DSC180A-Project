@@ -5,15 +5,7 @@ San Diego Gas & Electric leverages many different public and private data source
 ## Data Sources
 Data for this project is collected from [Google Street View Static API](https://developers.google.com/maps/documentation/streetview/overview). 
 
-To run sunny.py, you need specifically structured JSON file. The JSON file will have 2 main item(OH and UG) and each should be the list of 5 different pole and within each pole, there should be 'loc' for lat and long 'heading' for heading direction of the image.
-
-### Additional Files
-
-Add various files located in the HDSI Capstone 2023-2024 Sharepoint Documents/Data folder to the data directory. This is needed in order to run `scripts/collect_images.py`:
-* `joshua_structures.json`
-* `kevin_structures.json`
-* `jonathan_structures.json`
-* `structure_coordinates.json`
+You must add `images` folder from [Streetview Repo](https://github.com/pdashk/streetwatch) to root directory to be able to create the training and validation set.
 
 ## Setup
 
@@ -23,33 +15,24 @@ After cloning repo, navigating to root level and run:
 conda env create -f environment.yml
 ```
 
-###
+### Detr Model
+You must clone the detr repo to be able to train the mode:
 ```
 git clone https://github.com/woctezuma/detr.git
 cd detr/
 git checkout finetune
 cd ..
 ```
-
-### Credentials
-Store credentials in `.env` file and load using [python-dotenv](https://pypi.org/project/python-dotenv/).
-
-### Training Data
-Create training data by running the following after setup is complete:
-```
-python scripts/collect_images.py
-```
-
 # Project Structure
 
 ```
-├── data/               <- Local data files only (do not commit)
+├── data/custom/        <- Local data files only (do not commit)
 │
-├── notebooks/          <- Jupyter notebooks
+├── detr/               <- Cloned detr repo
 │
-├── scripts/            <- Python scripts to run in command line
+├── detr_main.ipynb     <- Python notebook to train model
 │
-├── .env                <- Environment variables for the project
+├── outputs             <- Location of model after fine-tuning and log
 │
 ├── .gitignore          <- Git ignore file
 │
