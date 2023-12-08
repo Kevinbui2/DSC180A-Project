@@ -23,6 +23,13 @@ cd detr/
 git checkout finetune
 cd ..
 ```
+
+### Create Training and Validation Sets
+After adding `images` folder to root directory, run:
+```
+python scripts/train_validate_split.py
+```
+After this is ran, 2 new folders will be created in data/custom/ which are `train2017` and `val2017`.
 # Project Structure
 
 ```
@@ -31,6 +38,8 @@ cd ..
 ├── detr/               <- Cloned detr repo
 │
 ├── detr_main.ipynb     <- Python notebook to train model
+│
+├── scripts             <- Python scripts to run in command line 
 │
 ├── outputs             <- Location of model after fine-tuning and log
 │
