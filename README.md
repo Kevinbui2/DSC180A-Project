@@ -52,7 +52,7 @@ Run `detr_main.ipynb` to fine-tune DETR on the streeview dataset.
 ├── scripts                     <- Python scripts to run in command line 
 │   ├── train_validate_split.py
 │
-├── outputs                     <- Location of model after fine-tuning and log (do not commit local model)
+├── outputs                     <- Fine-tuned model and metrics (do not commit model)
 │
 ├── .gitignore                  <- Git ignore file
 │
